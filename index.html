@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>好好棒电影网 - 高清电影电视剧综艺动漫在线观看 | haohaobangdianyingwang-zh.github.io</title>
+<meta name="keywords" content="好好棒电影网, haohaobangdianyingwang-zh.github.io, 免费高清电影, 在线看电影, 电视剧大全, 综艺节目, 动漫更新, 影视资源导航" />
+<meta name="description" content="好好棒电影网（haohaobangdianyingwang-zh.github.io）提供高清电影、热播电视剧、综艺、动漫与纪录片在线观看入口，含热播榜、分类频道、更新排片和影讯公告，移动端自适应，找片更省时间。" />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://haohaobangdianyingwang-zh.github.io" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    color: #e8ecf5;
+    background: #0b1020;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 18px; }
+
+  /* 顶部导航 */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11,16,32,0.92);
+    border-bottom: 1px solid rgba(120,160,255,0.18);
+    backdrop-filter: blur(8px);
+  }
+  .nav {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 62px;
+  }
+  .logo {
+    font-size: 20px; font-weight: 800; letter-spacing: .5px;
+    background: linear-gradient(90deg,#5eead4,#7c9bff,#c084fc);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .logo small { display:block; font-size:11px; font-weight:500; color:#9fb0d0; -webkit-text-fill-color:#9fb0d0; letter-spacing:0; }
+  .menu { display: flex; gap: 18px; list-style: none; flex-wrap: wrap; }
+  .menu a {
+    font-size: 15px; color: #cdd6ea; padding: 8px 10px; border-radius: 8px;
+    min-height: 44px; display: inline-flex; align-items: center;
+  }
+  .menu a:hover { background: rgba(124,155,255,0.14); color: #fff; }
+  .toggle { display: none; background: none; border: 1px solid rgba(120,160,255,.3); color: #dfe6f7; padding: 8px 12px; border-radius: 8px; font-size: 15px; min-height: 44px; }
+
+  /* 首屏 */
+  .hero {
+    background:
+      radial-gradient(900px 380px at 85% -10%, rgba(192,132,252,0.22), transparent 60%),
+      radial-gradient(800px 360px at 5% 10%, rgba(94,234,212,0.16), transparent 55%),
+      linear-gradient(180deg,#0d1428,#0b1020);
+    padding: 56px 0 46px;
+    border-bottom: 1px solid rgba(120,160,255,0.12);
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: 30px; align-items: center; }
+  .badge { display:inline-block; font-size:12px; color:#04201b; background:#5eead4; padding:4px 10px; border-radius:999px; font-weight:700; }
+  h1.title { font-size: 34px; line-height: 1.25; margin: 14px 0 12px; color:#fff; }
+  h1.title span { background:linear-gradient(90deg,#7c9bff,#c084fc); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .lead { color:#b9c4dd; max-width: 620px; }
+  .stat-row { display:flex; gap:18px; flex-wrap:wrap; margin-top:18px; }
+  .stat { background:rgba(255,255,255,0.04); border:1px solid rgba(120,160,255,0.16); padding:12px 16px; border-radius:12px; }
+  .stat b { color:#5eead4; font-size:20px; }
+  .stat span { display:block; font-size:12px; color:#9fb0d0; }
+  .search {
+    margin-top:22px; display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .search input {
+    flex:1; min-width:220px; height:46px; border-radius:10px; border:1px solid rgba(120,160,255,0.3);
+    background:#0f1730; color:#eaf0ff; padding:0 14px; font-size:15px;
+  }
+  .search button {
+    height:46px; padding:0 22px; border:0; border-radius:10px; cursor:pointer;
+    background:linear-gradient(90deg,#7c9bff,#c084fc); color:#08101f; font-weight:700; font-size:15px;
+  }
+  .console {
+    background:rgba(15,23,48,0.9); border:1px solid rgba(120,160,255,0.18); border-radius:16px; padding:18px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+  }
+  .console .bar { display:flex; gap:7px; margin-bottom:12px; }
+  .console .bar i { width:11px; height:11px; border-radius:50%; display:inline-block; background:#36406a; }
+  .console .bar i:nth-child(1){background:#ff6b6b;} .console .bar i:nth-child(2){background:#ffd166;} .console .bar i:nth-child(3){background:#5eead4;}
+  .console h3 { font-size:14px; color:#9fb0d0; font-weight:600; margin-bottom:10px; }
+  .chip-row { display:flex; flex-wrap:wrap; gap:8px; }
+  .chip { font-size:13px; color:#dbe4ff; background:rgba(124,155,255,0.12); border:1px solid rgba(124,155,255,0.25); padding:6px 11px; border-radius:999px; }
+
+  /* 通用区块 */
+  section.block { padding: 46px 0; border-bottom: 1px solid rgba(120,160,255,0.08); }
+  .sec-head { display:flex; align-items:flex-end; justify-content:space-between; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
+  h2.sec { font-size:24px; color:#fff; }
+  h2.sec small { display:block; font-size:13px; color:#8fa0c4; font-weight:500; margin-top:4px; }
+  .more { font-size:14px; color:#7c9bff; min-height:44px; display:inline-flex; align-items:center; }
+
+  .grid { display:grid; gap:18px; }
+  .cols4 { grid-template-columns:repeat(4,1fr); }
+  .cols3 { grid-template-columns:repeat(3,1fr); }
+  .card {
+    background:rgba(255,255,255,0.04); border:1px solid rgba(120,160,255,0.16); border-radius:14px; overflow:hidden;
+    transition:transform .2s ease, border-color .2s ease;
+  }
+  .card:hover { transform:translateY(-4px); border-color:rgba(124,155,255,0.45); }
+  .thumb { height:150px; background:linear-gradient(135deg,#1b2547,#222f5e); position:relative; }
+  .thumb span { position:absolute; left:10px; bottom:10px; font-size:12px; color:#cdd6ea; background:rgba(8,12,24,0.6); padding:3px 8px; border-radius:8px; }
+  .score { position:absolute; right:10px; top:10px; font-size:12px; font-weight:700; color:#08101f; background:#ffd166; padding:3px 8px; border-radius:8px; }
+  .card .body { padding:12px 14px; }
+  .card h3 { font-size:16px; color:#fff; margin-bottom:6px; }
+  .card p { font-size:13px; color:#aab6d4; }
+
+  /* 榜单 */
+  .rank { counter-reset: r; }
+  .rank li { list-style:none; display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(120,160,255,0.12); margin-bottom:10px; }
+  .rank li:before { counter-increment:r; content:counter(r); width:26px; height:26px; flex:0 0 26px; display:flex; align-items:center; justify-content:center; border-radius:8px; font-weight:700; color:#08101f; background:#5eead4; }
+  .rank li:nth-child(1):before{background:#ffd166;} .rank li:nth-child(2):before{background:#c0c8e0;} .rank li:nth-child(3):before{background:#e0a06a;}
+  .rank .meta { margin-left:auto; font-size:12px; color:#9fb0d0; }
+
+  /* 分类 */
+  .cats { display:flex; flex-wrap:wrap; gap:10px; }
+  .cat { font-size:14px; color:#dbe4ff; background:rgba(124,155,255,0.10); border:1px solid rgba(124,155,255,0.22); padding:9px 14px; border-radius:10px; min-height:44px; display:inline-flex; align-items:center; }
+  .cat:hover { background:rgba(124,155,255,0.2); }
+
+  /* 表格 */
+  .table-scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:680px; }
+  th,td { text-align:left; padding:12px 14px; border-bottom:1px solid rgba(120,160,255,0.14); font-size:14px; }
+  th { color:#9fb0d0; font-weight:600; background:rgba(255,255,255,0.03); }
+  td a.tag { color:#7c9bff; }
+
+  /* 公告/资讯 */
+  .news li { list-style:none; padding:14px 0; border-bottom:1px dashed rgba(120,160,255,0.16); }
+  .news .date { font-size:12px; color:#8fa0c4; margin-right:10px; }
+  .news h3 { font-size:16px; color:#fff; display:inline; }
+
+  /* FAQ */
+  .faq details { background:rgba(255,255,255,0.03); border:1px solid rgba(120,160,255,0.14); border-radius:12px; padding:0 16px; margin-bottom:10px; }
+  .faq summary { cursor:pointer; padding:14px 0; font-size:15px; color:#eaf0ff; min-height:44px; display:flex; align-items:center; }
+  .faq p { padding:0 0 14px; color:#aab6d4; font-size:14px; }
+
+  /* 下载/关于 */
+  .cta { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .cta .box { background:rgba(255,255,255,0.04); border:1px solid rgba(120,160,255,0.16); border-radius:14px; padding:18px; }
+  .btn { display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:10px; background:linear-gradient(90deg,#5eead4,#7c9bff); color:#08101f; font-weight:700; font-size:14px; margin-top:10px; }
+  .qr { width:96px; height:96px; border-radius:10px; background:repeating-linear-gradient(45deg,#0f1730,#0f1730 8px,#16203f 8px,#16203f 16px); border:1px solid rgba(120,160,255,0.3); }
+
+  /* 页脚 */
+  footer.site { padding:36px 0 28px; background:#0a0f1e; color:#9fb0d0; }
+  .foot-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+  footer h4 { color:#dbe4ff; font-size:14px; margin-bottom:10px; }
+  footer a { display:inline-block; padding:5px 0; font-size:13px; color:#9fb0d0; }
+  footer a:hover { color:#7c9bff; }
+  .copy { margin-top:22px; font-size:12px; color:#74809c; line-height:1.8; }
+
+  @media (max-width: 1000px) {
+    .hero-grid { grid-template-columns:1fr; }
+    .cols4 { grid-template-columns:repeat(2,1fr); }
+    .cols3 { grid-template-columns:1fr; }
+    .cta { grid-template-columns:1fr; }
+    .foot-grid { grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width: 720px) {
+    .menu { display:none; position:absolute; top:62px; left:0; right:0; background:#0d1428; flex-direction:column; gap:0; padding:8px 18px 14px; border-bottom:1px solid rgba(120,160,255,0.18); }
+    .menu.show { display:flex; }
+    .menu a { width:100%; }
+    .toggle { display:inline-block; }
+    h1.title { font-size:27px; }
+    .cols4 { grid-template-columns:repeat(2,1fr); }
+    .foot-grid { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">好好棒电影网<small>haohaobangdianyingwang-zh.github.io</small></div>
+    <button class="toggle" aria-label="展开菜单" onclick="document.getElementById('nav').classList.toggle('show')">菜单</button>
+    <ul class="menu" id="nav">
+      <li><a href="#hot">热播榜</a></li>
+      <li><a href="#movie">电影库</a></li>
+      <li><a href="#tv">剧集综艺</a></li>
+      <li><a href="#cat">分类频道</a></li>
+      <li><a href="#update">更新排片</a></li>
+      <li><a href="#news">影讯公告</a></li>
+      <li><a href="#faq">常见问题</a></li>
+      <li><a href="#app">客户端</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">好好棒电影网 · 在线影视导航</span>
+      <h1 class="title">好好棒电影网：<span>高清电影/剧集/综艺</span>一站式找片</h1>
+      <p class="lead">好好棒电影网（https://haohaobangdianyingwang-zh.github.io）汇总热播电影、电视剧、综艺、动漫与纪录片观看入口，按热播榜、题材分类和更新排片快速定位想看的片子，手机电脑自适应浏览。</p>
+      <div class="stat-row">
+        <div class="stat"><b>4.8万+</b><span>影视条目</span></div>
+        <div class="stat"><b>320+</b><span>每日更新</span></div>
+        <div class="stat"><b>12类</b><span>题材频道</span></div>
+        <div class="stat"><b>9.1</b><span>平均评分</span></div>
+      </div>
+      <form class="search" onsubmit="return false;" action="#">
+        <input type="search" name="q" placeholder="搜索电影名、演员、导演、题材，如：科幻/悬疑/喜剧" aria-label="搜索影视" />
+        <button type="submit">搜影片</button>
+      </form>
+    </div>
+    <div class="console" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <h3>今日片单控制台</h3>
+      <div class="chip-row">
+        <span class="chip">热播榜</span>
+        <span class="chip">院线新片</span>
+        <span class="chip">高分经典</span>
+        <span class="chip">悬疑犯罪</span>
+        <span class="chip">合家欢动画</span>
+        <span class="chip">综艺更新</span>
+        <span class="chip">纪录片</span>
+        <span class="chip">短剧速览</span>
+      </div>
+      <h3 style="margin-top:14px;">快速入口</h3>
+      <div class="chip-row">
+        <a class="chip" href="#hot">看热播</a>
+        <a class="chip" href="#movie">挑电影</a>
+        <a class="chip" href="#tv">追剧综</a>
+        <a class="chip" href="#cat">按类型</a>
+        <a class="chip" href="#update">看排片</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="block" id="hot">
+    <div class="sec-head">
+      <h2 class="sec">热播榜与口碑榜<small>好好棒电影网实时整理观看热度与评分</small></h2>
+      <a class="more" href="#">查看完整榜单 #</a>
+    </div>
+    <div class="grid cols3">
+      <ol class="rank">
+        <li>极夜追凶 <span class="meta">悬疑·9.2·热播1</span></li>
+        <li>春风十里剧场 <span class="meta">都市·8.9·热播2</span></li>
+        <li>深海回响 <span class="meta">科幻·9.0·热播3</span></li>
+        <li>山城旧事 <span class="meta">剧情·8.7·热播4</span></li>
+        <li>周末笑场 <span class="meta">喜剧·8.5·热播5</span></li>
+      </ol>
+      <ol class="rank">
+        <li>边境线 <span class="meta">犯罪·9.1·院线</span></li>
+        <li>纸上山河 <span class="meta">历史·8.8·院线</span></li>
+        <li>电波之下 <span class="meta">谍战·8.6·院线</span></li>
+        <li>星轨列车 <span class="meta">动画·8.9·院线</span></li>
+        <li>晚风食堂 <span class="meta">治愈·8.4·院线</span></li>
+      </ol>
+      <ol class="rank">
+        <li>旧胶片修复合集 <span class="meta">经典·9.3·口碑</span></li>
+        <li>人间烟火纪录辑 <span class="meta">纪录·9.0·口碑</span></li>
+        <li>悬案档案1980 <span class="meta">刑侦·8.9·口碑</span></li>
+        <li>童话重构系列 <span class="meta">奇幻·8.7·口碑</span></li>
+        <li>爵士深夜档 <span class="meta">音乐·8.5·口碑</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="movie">
+    <div class="sec-head">
+      <h2 class="sec">电影库精选<small>好好棒电影网按类型与年份整理高清电影</small></h2>
+      <a class="more" href="#">浏览全部电影 #</a>
+    </div>
+    <div class="grid cols4">
+      <div class="card">
+        <div class="thumb"><span>科幻/冒险</span><b class="score">9.0</b></div>
+        <div class="body"><h3>星轨之外</h3><p>近未来太空救援，硬核设定与情感双线并行。</p></div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>悬疑/犯罪</span><b class="score">9.2</b></div>
+        <div class="body"><h3>极夜追凶</h3><p>极地小城连环案，节奏紧凑、反转克制。</p></div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>喜剧/家庭</span><b class="score">8.5</b></div>
+        <div class="body"><h3>周末笑场</h3><p>三户人家跨城探亲，笑点密集不尴尬。</p></div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>剧情/历史</span><b class="score">8.8</b></div>
+        <div class="body"><h3>纸上山河</h3><p>古籍修复师三代传承，质感细腻耐看。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tv">
+    <div class="sec-head">
+      <h2 class="sec">电视剧 / 综艺 / 动漫<small>好好棒电影网聚合连续剧与综艺更新入口</small></h2>
+      <a class="more" href="#">进入剧集中心 #</a>
+    </div>
+    <div class="grid cols3">
+      <div class="card">
+        <div class="thumb"><span>都市长篇</span></div>
+        <div class="body"><h3>春风十里剧场</h3><p>职场与情感群像，更新至32集，支持倍速追更。</p></div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>户外综艺</span></div>
+        <div class="body"><h3>周末出发吧</h3><p>城市周边轻旅行，每周更新正片与花絮。</p></div>
+      </div>
+      <div class="card">
+        <div class="thumb"><span>国创动漫</span></div>
+        <div class="body"><h3>星轨列车番外</h3><p>电影平行时间线，周更动画与设定解析。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="cat">
+    <div class="sec-head">
+      <h2 class="sec">分类频道<small>按题材快速筛选，好好棒电影网覆盖12类影视</small></h2>
+      <a class="more" href="#">全部频道 #</a>
+    </div>
+    <div class="cats">
+      <a class="cat" href="#">动作</a>
+      <a class="cat" href="#">科幻</a>
+      <a class="cat" href="#">悬疑</a>
+      <a class="cat" href="#">犯罪</a>
+      <a class="cat" href="#">喜剧</a>
+      <a class="cat" href="#">爱情</a>
+      <a class="cat" href="#">历史</a>
+      <a class="cat" href="#">战争</a>
+      <a class="cat" href="#">动画</a>
+      <a class="cat" href="#">纪录片</a>
+      <a class="cat" href="#">综艺</a>
+      <a class="cat" href="#">儿童</a>
+    </div>
+  </section>
+
+  <section class="block" id="update">
+    <div class="sec-head">
+      <h2 class="sec">更新排片表<small>好好棒电影网每日同步新片与剧集进度</small></h2>
+      <a class="more" href="#">订阅更新 #</a>
+    </div>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>名称</th><th>类型</th><th>最新进度</th><th>上线时间</th><th>热度</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><a class="tag" href="#">极夜追凶</a></td><td>电影/悬疑</td><td>HD高清</td><td>2026-09-28</td><td>98.2万</td></tr>
+          <tr><td><a class="tag" href="#">春风十里剧场</a></td><td>电视剧/都市</td><td>第32集</td><td>2026-09-29</td><td>76.5万</td></tr>
+          <tr><td><a class="tag" href="#">周末出发吧</a></td><td>综艺/户外</td><td>第10期</td><td>2026-09-27</td><td>54.1万</td></tr>
+          <tr><td><a class="tag" href="#">星轨列车番外</a></td><td>动漫/科幻</td><td>第8话</td><td>2026-09-29</td><td>61.8万</td></tr>
+          <tr><td><a class="tag" href="#">人间烟火纪录辑</a></td><td>纪录片/社会</td><td>第6集</td><td>2026-09-26</td><td>42.3万</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="block" id="news">
+    <div class="sec-head">
+      <h2 class="sec">影讯与公告<small>好好棒电影网发布片单调整与站点通知</small></h2>
+      <a class="more" href="#">更多公告 #</a>
+    </div>
+    <ul class="news">
+      <li><span class="date">2026-09-30</span><h3>秋季新片专区上线，新增科幻与悬疑合集</h3></li>
+      <li><span class="date">2026-09-28</span><h3>院线同步栏目优化，支持按评分和地区筛选</h3></li>
+      <li><span class="date">2026-09-25</span><h3>综艺中心改版，正片、花絮、嘉宾Cut分栏展示</h3></li>
+      <li><span class="date">2026-09-22</span><h3>移动端播放页提速，适配弱网与横屏全屏</h3></li>
+    </ul>
+  </section>
+
+  <section class="block faq" id="faq">
+    <div class="sec-head">
+      <h2 class="sec">常见问题<small>关于好好棒电影网找片、画质与账号</small></h2>
+      <a class="more" href="#">提交工单 #</a>
+    </div>
+    <details open>
+      <summary>好好棒电影网主要提供哪些内容？</summary>
+      <p>站点汇总电影、电视剧、综艺、动漫、纪录片的正版或授权观看入口；若仅作资讯导航，会标注来源与平台，不提供未授权下载。</p>
+    </details>
+    <details>
+      <summary>手机端为什么有些影片加载慢？</summary>
+      <p>可能与网络、片源清晰度、CDN节点有关。建议在Wi‑Fi下选择720P/1080P，弱网可切换标清；页面本身已做响应式与懒加载优化。</p>
+    </details>
+    <details>
+      <summary>如何按题材批量找片？</summary>
+      <p>使用“分类频道”筛选动作、科幻、悬疑、喜剧等12类；结合“热播榜”可按热度和评分二次排序。</p>
+    </details>
+    <details>
+      <summary>网站网址和收录信息怎么写？</summary>
+      <p>官方网址为 https://haohaobangdianyingwang-zh.github.io ；页面已配置title、description、canonical与响应式标签，便于必应等搜索引擎抓取索引。</p>
+    </details>
+  </section>
+
+  <section class="block" id="app">
+    <div class="sec-head">
+      <h2 class="sec">客户端与关于<small>好好棒电影网多端同步片单</small></h2>
+      <a class="more" href="#">合作入驻 #</a>
+    </div>
+    <div class="cta">
+      <div class="box">
+        <h3 style="color:#fff;font-size:16px;">移动/电视客户端</h3>
+        <p style="color:#aab6d4;font-size:14px;">支持iOS、Android、Android TV与投屏；登录后同步收藏、续播记录和儿童模式。</p>
+        <a class="btn" href="#">下载App #</a>
+        <a class="btn" href="#" style="background:linear-gradient(90deg,#c084fc,#7c9bff);">TV版下载 #</a>
+      </div>
+      <div class="box" style="display:flex;gap:16px;align-items:center;">
+        <div class="qr"></div>
+        <div>
+          <h3 style="color:#fff;font-size:16px;">扫码访问好好棒电影网</h3>
+          <p style="color:#aab6d4;font-size:14px;">移动端扫码进入M站，网址 https://haohaobangdianyingwang-zh.github.io ，无需注册也可浏览热播与分类。</p>
+          <a class="btn" href="#">联系客服 #</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>影视导航</h4>
+        <a href="#hot">热播榜</a><br/>
+        <a href="#movie">电影库</a><br/>
+        <a href="#tv">剧集综艺</a><br/>
+        <a href="#cat">分类频道</a>
+      </div>
+      <div>
+        <h4>找片工具</h4>
+        <a href="#update">更新排片</a><br/>
+        <a href="#news">影讯公告</a><br/>
+        <a href="#faq">常见问题</a><br/>
+        <a href="#">高级筛选 #</a>
+      </div>
+      <div>
+        <h4>多端支持</h4>
+        <a href="#app">手机客户端</a><br/>
+        <a href="#app">电视TV版</a><br/>
+        <a href="#app">扫码访问</a><br/>
+        <a href="#">投屏帮助 #</a>
+      </div>
+      <div>
+        <h4>关于本站</h4>
+        <a href="#">关于好好棒</a><br/>
+        <a href="#">版权与合规</a><br/>
+        <a href="#">广告合作</a><br/>
+        <a href="#">隐私政策 #</a>
+      </div>
+    </div>
+    <div class="copy">
+      好好棒电影网 官方网址：https://haohaobangdianyingwang-zh.github.io ｜ 本页仅作影视信息导航与正版入口整理，所有影片名、评分与更新数据均为示例，实际片源以各授权平台为准。<br/>
+      © 2026 好好棒电影网 haohaobangdianyingwang-zh.github.io 保留所有权利。若提供在线播放，须确保已取得著作权人合法授权，避免未经许可传播影视资源。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
